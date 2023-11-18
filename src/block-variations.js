@@ -8,31 +8,28 @@ import { __ } from "@wordpress/i18n";
  * Internal dependencies
  */
 
-const MY_VARIATION_NAME = "portfolio-projects";
+const QUERY_VARIATION_NAME = "portfolio-projects";
 registerBlockVariation("core/query", {
-	name: MY_VARIATION_NAME,
-	title: "Portfolio Projects",
+	name: QUERY_VARIATION_NAME,
+	title: "Portfolio Projects Query",
 	attributes: {
-		namespace: MY_VARIATION_NAME,
+		namespace: QUERY_VARIATION_NAME,
 		query: {
-			perPage: 2,
-			// pages: 0,
-			// offset: 0,
+			perPage: 10,
 			postType: "portfolio_topic",
-			// order: 'desc',
-			// orderBy: 'date',
-			// author: '',
-			// search: '',
-			// exclude: [],
-			// sticky: '',
-			// inherit: false,
 		},
+		className: "portfolio-query",
 	},
 	scope: ["inserter"],
 	isActive: ["namespace"],
 	innerBlocks: [
-		["core/post-template", {}, [["core/post-title"], ["core/post-excerpt"]]],
-		["core/query-pagination"],
-		["core/query-no-results"],
+		[
+			"core/post-template",
+			{ layout: { type: "grid", columnCount: 4 } },
+			[
+				["core/post-featured-image", { isLink: true }],
+				["core/post-title", { isLink: true }],
+			],
+		],
 	],
 });
