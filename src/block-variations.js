@@ -23,7 +23,10 @@ registerBlockVariation("core/query", {
 	scope: ["inserter"],
 	isActive: ["namespace"],
 	innerBlocks: [
-		["core/heading", { placeholder: "Section Label" }],
+		[
+			"core/heading",
+			{ placeholder: "Section Label", className: "query-heading" },
+		],
 		[
 			"core/post-template",
 			{ layout: { type: "grid", columnCount: 3 } },
