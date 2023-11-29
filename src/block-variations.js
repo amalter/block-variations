@@ -23,9 +23,10 @@ registerBlockVariation("core/query", {
 	scope: ["inserter"],
 	isActive: ["namespace"],
 	innerBlocks: [
+		["core/heading", { placeholder: "Section Label" }],
 		[
 			"core/post-template",
-			{ layout: { type: "grid", columnCount: 4 } },
+			{ layout: { type: "grid", columnCount: 3 } },
 			[
 				["core/post-featured-image", { isLink: true }],
 				["core/post-title", { isLink: true }],
