@@ -19,6 +19,7 @@ registerBlockVariation("core/query", {
 			postType: "portfolio_topic",
 		},
 		className: "portfolio-query",
+		providerNameSlug: QUERY_VARIATION_NAME,
 	},
 	scope: ["inserter"],
 	isActive: ["namespace"],
