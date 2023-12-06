@@ -21,7 +21,7 @@ registerBlockVariation("core/query", {
 		className: "portfolio-query",
 		providerNameSlug: QUERY_VARIATION_NAME,
 	},
-	scope: ["inserter"],
+	scope: ["inserter", "transform", "block"],
 	isActive: ["namespace"],
 	innerBlocks: [
 		[
